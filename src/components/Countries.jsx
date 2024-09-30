@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Country from "./Country";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Countries() {
   const [countries, setCountries] = useState([]);
@@ -79,8 +80,11 @@ export default function Countries() {
               </p>
               <p>
                 Language:{" "}
-                <span className="font-bold">{
-                  country?.languages?.eng === "English" ? country?.languages?.eng : "Language Not Available"}</span>
+                <span className="font-bold">
+                  {country?.languages?.eng === "English"
+                    ? country?.languages?.eng
+                    : "Language Not Available"}
+                </span>
               </p>
               <p>
                 Region: <span className="font-bold">{country?.region}</span>
@@ -122,14 +126,7 @@ export default function Countries() {
               />
             ))}
         </div>
-
-        <footer className="shadow dark:bg-[#2b3945]">
-          <div className="w-full max-w-screen-xl mx-auto p-8 md:py-10">
-            <span className="block text-sm text-gray-300 sm:text-center">
-              Copyright {new Date().getFullYear()} © <span className="font-bold">Fahad, Sirajganj</span> All Rights Reserved.
-            </span>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
